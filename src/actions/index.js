@@ -27,7 +27,6 @@ function* searchByAbnSaga({ payload }) {
     jsonpCallbackFunction: "abnCallback"
   });
   resp = yield resp.json();
-  // console.log(resp);
   if (resp.Message) {
     yield put({
       type: SEARCH_ERROR,
@@ -87,13 +86,11 @@ function mapNamesToBusiness(names) {
 }
 
 function* viewAbnSaga({ payload }) {
-  console.log("viewAbnSaga :: ", payload);
   const URL = `${ABR}AbnDetails.aspx?callback=abnCallback&abn=${payload}&guid=${GUID}`;
   let resp = yield fetchJsonp(URL, {
     jsonpCallbackFunction: "abnCallback"
   });
   resp = yield resp.json();
-  console.log("resp ::", resp);
   if (resp.Message) {
     yield put({
       type: SEARCH_ERROR,

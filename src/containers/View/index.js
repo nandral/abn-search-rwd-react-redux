@@ -36,7 +36,6 @@ class View extends React.Component {
   render() {
     const { error = "", business = {} } = this.props;
     const { name, status, abn, location, type } = business;
-    console.log(error, business);
     const externalLink = `https://abr.business.gov.au/ABN/View?abn=${abn}`;
     return (
       <RootLayout>
@@ -53,40 +52,46 @@ class View extends React.Component {
             </Grid>
           </StyledLink>
           <Table>
-            <TableRow>
-              <TableData>Name</TableData>
-              <TableData>
-                <Text fontWeight="500" color="#c23616">
-                  {name}
-                </Text>
-              </TableData>
-            </TableRow>
-            <TableRow>
-              <TableData>ABN</TableData>
-              <TableData> {abn}</TableData>
-            </TableRow>
-            <TableRow>
-              <TableData>Status</TableData>
-              <TableData>
-                <Grid direction="row" alignItems="center" justify="flex-start">
-                  <Circle
-                    size="0.9rem"
-                    color={status === "Active" ? GREEN : "grey"}
-                  />
-                  <Text fontStyle="italic" color="#222">
-                    {status}
+            <tbody>
+              <TableRow>
+                <TableData>Name</TableData>
+                <TableData>
+                  <Text fontWeight="500" color="#c23616">
+                    {name}
                   </Text>
-                </Grid>
-              </TableData>
-            </TableRow>
-            <TableRow>
-              <TableData>Type</TableData>
-              <TableData> {type}</TableData>
-            </TableRow>
-            <TableRow>
-              <TableData>Location</TableData>
-              <TableData> {location}</TableData>
-            </TableRow>
+                </TableData>
+              </TableRow>
+              <TableRow>
+                <TableData>ABN</TableData>
+                <TableData> {abn}</TableData>
+              </TableRow>
+              <TableRow>
+                <TableData>Status</TableData>
+                <TableData>
+                  <Grid
+                    direction="row"
+                    alignItems="center"
+                    justify="flex-start"
+                  >
+                    <Circle
+                      size="0.9rem"
+                      color={status === "Active" ? GREEN : "grey"}
+                    />
+                    <Text fontStyle="italic" color="#222">
+                      {status}
+                    </Text>
+                  </Grid>
+                </TableData>
+              </TableRow>
+              <TableRow>
+                <TableData>Type</TableData>
+                <TableData> {type}</TableData>
+              </TableRow>
+              <TableRow>
+                <TableData>Location</TableData>
+                <TableData> {location}</TableData>
+              </TableRow>
+            </tbody>
           </Table>
           <Grid>
             More details can be found on&nbsp;
