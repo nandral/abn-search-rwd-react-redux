@@ -1,0 +1,29 @@
+{
+  "name": "abn-search-rwd-react-redux",
+  "version": "1.0.0",
+  "description": "Responsive React, Redux, styled-components",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "enzyme": "3.8.0",
+    "enzyme-adapter-react-16": "1.7.1",
+    "fetch-jsonp": "1.1.3",
+    "react": "16.6.3",
+    "react-dom": "16.6.3",
+    "react-redux": "6.0.0",
+    "react-router-dom": "4.3.1",
+    "react-scripts": "2.0.3",
+    "redux": "4.0.1",
+    "redux-promise": "0.6.0",
+    "redux-saga": "0.16.2",
+    "styled-components": "4.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [">0.2%", "not dead", "not ie <= 11", "not op_mini all"]
+}
