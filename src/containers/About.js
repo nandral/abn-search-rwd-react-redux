@@ -31,7 +31,7 @@ export default function() {
         justify="flex-start"
         alignItems="flex-start"
       >
-        <Text fontWeight="500" fontSize="1.2rem">
+        <Text fontWeight="500" fontSize="120%">
           About ABN Search
         </Text>
         <Text>

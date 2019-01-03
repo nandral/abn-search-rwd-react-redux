@@ -15,14 +15,14 @@ const Card = styled(Grid)`
 `;
 const GREEN = "#2ecc71";
 const Tile = props => {
-  const { abn, name, location, status, type } = props;
+  const { abn, name, location, status } = props;
   return (
     <Card direction="column" alignItems="flex-start">
-      <Text fontWeight="500" fontSize="1.rem" color="#c23616">
+      <Text fontWeight="500" fontSize="100%" color="#c23616">
         {name.toUpperCase()}
       </Text>
       <Grid direction="column" style={{ width: "100%" }}>
-        <Text fontWeight="500" fontSize="0.9rem" color="#333">
+        <Text fontWeight="500" fontSize="90%" color="#333">
           ABN: {abn}
         </Text>
         <Grid direction="row" justify="space-between">

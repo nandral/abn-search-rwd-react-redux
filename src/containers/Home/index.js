@@ -64,7 +64,6 @@ class Home extends React.Component {
 
   render() {
     const { error, results, loading } = this.props;
-    // console.log(error, results);
     return (
       <Root>
         <SearchGrid direction="column" justify="flex-start">

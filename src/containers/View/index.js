@@ -56,7 +56,7 @@ class View extends React.Component {
             <TableRow>
               <TableData>Name</TableData>
               <TableData>
-                <Text fontWeight="500" fontSize="1.rem" color="#c23616">
+                <Text fontWeight="500" color="#c23616">
                   {name}
                 </Text>
               </TableData>
