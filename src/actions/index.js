@@ -41,19 +41,28 @@ function* searchByAbnSaga({ payload }) {
 
 function* searchByNameSaga({ payload }) {
   yield put({ type: PROCESSING_REQUEST, payload: true });
-  const URL = `${ABR}MatchingNames.aspx?callback=nameCallback&name=${payload}&maxResults=20&guid=${GUID}`;
-  let resp = yield fetchJsonp(URL, {
-    jsonpCallbackFunction: "nameCallback"
-  });
-  resp = yield resp.json();
-  yield put({ type: PROCESSING_REQUEST, payload: false });
-  if (resp.Names && resp.Names.length > 0) {
-    const names = mapNamesToBusiness(resp.Names);
-    yield put({ type: SEARCH_BY_NAME_COMPLETED, payload: names });
-  } else {
+  try {
+    const URL = `${ABR}MatchingNames.aspx?callback=nameCallback&name=${payload}&maxResults=20&guid=${GUID}`;
+    let resp = yield fetchJsonp(URL, {
+      jsonpCallbackFunction: "nameCallback"
+    });
+    resp = yield resp.json();
+    yield put({ type: PROCESSING_REQUEST, payload: false });
+    if (resp.Names && resp.Names.length > 0) {
+      const names = mapNamesToBusiness(resp.Names);
+      yield put({ type: SEARCH_BY_NAME_COMPLETED, payload: names });
+    } else {
+      yield put({
+        type: SEARCH_ERROR,
+        payload: "Search text is not a valid business name"
+      });
+    }
+  } catch (err) {
+    yield put({ type: PROCESSING_REQUEST, payload: false });
     yield put({
       type: SEARCH_ERROR,
-      payload: "Search text is not a valid business name"
+      payload:
+        "Request timed out. Enter at least 4 characters and please try again!"
     });
   }
 }

@@ -1,9 +1,11 @@
 import React from "react";
-import { Input, Grid, Icon, Card, Text, Loader } from "components";
+import { Grid, Loader } from "components";
 import styled from "styled-components";
 import { SEARCH_BY_ABN_REQUEST, SEARCH_BY_NAME_REQUEST } from "actions/types";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+
+import SearchForm from "./SearchForm";
+import SearchResults from "./SearchResults";
 
 const SearchGrid = styled(Grid)`
   margin-top: 1rem;
@@ -12,80 +14,46 @@ const SearchGrid = styled(Grid)`
     width: 360px;
   }
 `;
-const Root = styled(Grid)`
+const RootLayout = styled(Grid)`
   align-self: center;
   flex: 1;
   max-width: 700px;
 `;
 
-const SearchResults = styled.div`
-  display: flex;
-  align-content: flex-start;
-  flex-wrap: wrap;
-  width: 700px;
-  @media screen and (max-width: 450px) {
-    width: 360px;
-  }
-`;
-
-class Home extends React.Component {
+export class Home extends React.Component {
   state = {
     searchText: ""
   };
 
-  handleChange = e => {
-    this.setState({ searchText: e.target.value });
+  handleChange = event => {
+    this.setState({ searchText: event.target.value });
   };
 
-  handleSubmit = e => {
-    e.preventDefault();
+  handleSubmit = event => {
+    event.preventDefault();
     const { searchText } = this.state;
     if (isNaN(searchText)) {
-      this.props.searchByName(this.state.searchText);
+      this.props.searchByName(searchText);
     } else {
-      this.props.searchByAbn(this.state.searchText);
+      this.props.searchByAbn(searchText);
     }
   };
 
-  renderSearchResults() {
-    const { results } = this.props;
-    return results.length
-      ? results.map((business, index) => (
-          <Link
-            key={index}
-            to={`/view/${business.abn}`}
-            style={{ textDecoration: "none" }}
-          >
-            <Card {...business} />
-          </Link>
-        ))
-      : null;
-  }
-
   render() {
-    const { error, results, loading } = this.props;
+    const { error, results = [], loading } = this.props;
     return (
-      <Root>
+      <RootLayout>
         <SearchGrid direction="column" justify="flex-start">
-          <form onSubmit={this.handleSubmit}>
-            <Grid direction="row" alignItems="center">
-              <Input
-                placeholder="Search by ABN or name"
-                value={this.state.searchText}
-                onChange={this.handleChange}
-              />
-              <Icon onClick={this.handleSubmit} className="material-icons">
-                search
-              </Icon>
-            </Grid>
-            <Text color="red">{error || null}</Text>
-          </form>
+          <SearchForm
+            searchText={this.state.searchText}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+            error={error}
+          />
           {loading === true && <Loader />}
-          {!error && results.length > 0 && (
-            <SearchResults>{this.renderSearchResults()}</SearchResults>
-          )}
+          {!error && results.length > 0 && <SearchResults results={results} />}
         </SearchGrid>
-      </Root>
+      </RootLayout>
     );
   }
 }

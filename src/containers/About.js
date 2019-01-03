@@ -52,9 +52,9 @@ export default function() {
         </Text>
         <p>
           More details about the technologies used in developing this front end
-          along the with source code can be found on{" "}
+          along the with source code can be found on&nbsp;
           <A
-            href="https://github.com/nandral/abn-search-responsive-react-redux"
+            href="https://github.com/nandral/abn-search-rwd-react-redux"
             target="_blank"
           >
             GitHub

@@ -27,7 +27,7 @@ const A = styled.a`
 
 const GREEN = "#2ecc71";
 
-class View extends React.Component {
+export class View extends React.Component {
   constructor(props) {
     super(props);
     this.props.viewAbn(this.props.match.params.abn);
