@@ -16,10 +16,11 @@ npm start
 #### Methodlogies followed / modules used
 
 * `React`  JavaScript library for building user interfaces
-* `CSS3`  for styling the responsive front end.
+* `react-router-dom` for client-side routing
+* [styled-components](https://www.styled-components.com/) allows you to write actual CSS code to style React components
 * `redux` for managing application state
-* `react-router` for client-side routing
 * `react-saga` for handling redux app side effects
+* [fetch-jsonp](https://www.npmjs.com/package/fetch-jsonp) for calling [ABR JSON APIs](https://abr.business.gov.au/json/) 
 
 **Responsive Web Design principles are applied throught out, so that web page rendering is consistent and the content is legible across Desktop, Tablet, Mobile**
 
