@@ -13,6 +13,13 @@ npm install
 npm start
 ```
 
+#### Methodlogies followed / modules used
+
+* `React`  JavaScript library for building user interfaces
+* `CSS3`  for styling the responsive front end.
+* `redux` for managing application state
+* `react-router` for client-side routing
+* `react-saga` for handling redux app side effects
 
 **Responsive Web Design principles are applied throught out, so that web page rendering is consistent and the content is legible across Desktop, Tablet, Mobile**
 
@@ -22,10 +29,9 @@ npm start
 **Tablet View**
 ![](https://lh3.googleusercontent.com/-I_ZuS51f5aSxXURsI1Th8C3lCjGlK4GU96yTynDZwGgSRJjUSbn4QArLm1XbB1NX85LeIKZKEf8CeR3JosN1jio8NNF3NwiFy8neDraUzV1gjK65h_Rvto2KyfOqfl7yPlTEA_3VYcQreZCmoUqouEXynuSA8hqdxXvNXLueAKnHcaGLUlLwe2dMyc-x4mdOv4Obbi9MNjd_dk07meJvbDFWyCPUgbhg0AR7K5BH4FLmdSaNPs_dRoGhdkebM6pZ3qVruvi96tzUJhWBWI-Oat_MqCmmT922XqrIHqTDupf_kz6BULz3nEs-gvDdV7AP6diipA5BKJ_kROcz2KmHrG8q01Gi22wIwyL7p4PivwLB89mpeXECmTTPgUBHyziSHT91SsoIjowhPP7yPbQaEAFq3T_ksZvtuVw1PFoGYQ7Ps6Ji4_X6DyRHAYPpnDs44RHefoNqfy_aYRRfUNHdbWxgSLYR7Jx441OhL50VoXYr1kVv3ihY0jo3-DuZ05yQS0DnZFPqBa-W0JHX--W2o4aQGzQS-uoNZJCrRy3fShia7Q-fXajn0UY3gvHD5iheTHlafcBADcYQTnaqjYUpDpFxku-usqja23UCrdR_9eihvddCdIoQHa7OQUMMEou0hWj_Y0uQCeuEZEBrzKqupxnpRhQijXIO8SUOSXmP8YLsPgU79X9vRvcjkC8WmSonVeXKr36-tvdNmgaww=w1604-h1460-no)
 
-#### Methodlogies followed / modules used
+**Mobile View**
+![](
+https://lh3.googleusercontent.com/hgqnzIFGqvd3ZixaVHUECcNQp28IjwsMM-nf1Gv04a2FUVrZU2HDQLgyevgiBGCtfLEKux2nKHevt2GQWt8L9YPYtJGO2cE2hZ5x1Cq9srb7sxhTTaHkDaMqEmlsrRCWSsbCYc7iOTu_se0UikUz-05kpzkBHtXJOCV_UcZpgNj-zC3JxuaW79XcnKkVg3ACUDRPB96gRA8ckks_-SLeffiTj9y9qLWYSbuqS2bAGpxLvtJmwY-KtTzHFEmPReruCdZnOziMTjb0kRpGLrMhjZColsr0Gb6PuVntlwbxIOuwyRzhkpfaTdQsA9NO1EMhBn9EsLPiSK1lgZd8fuAe4U4mBu9dlOW6JABfnEOBv0mBhu1UFwU75Si4aQZ-Ux7eHo4B0R-_Nnve0DOMRJAt8Fzn4fr3SWPamHPn-vnFevYDs_TMUI67v7Kk1p4NW9xmLfMqWebDBHv9F9UNBlPQgNG1-VeqZR2XzyD8xWRmthYSSR66ynvGg-vaglDFGUp1iJkIdWM8i9ABX8eAEh_gy6sQCgz414C-hMWck7J27Ig6yIWYNrQL1Boh5p1VQ6BvhMEfo4NP_zwopMpvrAJnC_bcb6n-EJrQ_cymfhwYMUYHxrB5kCfFklOCO94D5SxazTCQ_eZH6iXXqvzYVLbwTx-Tsm2XVizQZLXd9-gUa7qVhbMI9u8_bC3fDgEkkdo0KUVo_vc70YxSwFFKzA=w844-h1430-no
+)
 
-* `React`  JavaScript library for building user interfaces
-* `CSS3`  for styling the responsive front end.
-* `redux` for managing application state
-* `react-router` for client-side routing
-* `react-saga` for handling redux app side effects
+
