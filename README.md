@@ -24,6 +24,9 @@ npm start
 * `enzyme` for unit testing of React components
 * [redux-saga-test-plan](https://www.npmjs.com/package/redux-saga-test-plan) makes testing sagas a breeze
 
+#### TODO - Good to have features
+* `Implement pagination` - As of now search results shows only 20 records. Pagination will help to search more records.
+* `Search flag` - As of now, search results shows both active and cancelled records. Search flags to show only Active/Cancelled records.
 
 **Responsive Web Design principles are applied throught out, so that web page rendering is consistent and the content is legible across Desktop, Tablet, Mobile**
 
