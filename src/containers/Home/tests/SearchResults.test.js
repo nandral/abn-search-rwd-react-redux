@@ -11,7 +11,7 @@ describe("<SearchResults />", () => {
         abn: "32614059737",
         name: "Trade Ledger",
         status: "Active",
-        location: `2000 NSW`
+        location: "2000 NSW"
       }
     ];
     const component = shallow(<SearchResults results={results} />);
@@ -24,13 +24,13 @@ describe("<SearchResults />", () => {
         abn: "32614059737",
         name: "Trade Ledger",
         status: "Active",
-        location: `2000 NSW`
+        location: "2000 NSW"
       },
       {
         abn: "64145706967",
         name: "TOP JUICE PTY LTD",
         status: "Active",
-        location: `2000 NSW`
+        location: "2000 NSW"
       }
     ];
     const component = shallow(<SearchResults results={results} />);

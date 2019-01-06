@@ -11,8 +11,8 @@ import {
 import fetchJsonp from "fetch-jsonp";
 import { takeLatest, call, put } from "redux-saga/effects";
 
-const GUID = "b6242120-5bce-4b10-9839-d3045a7682da";
-const ABR = "https://abr.business.gov.au/json/";
+export const GUID = "b6242120-5bce-4b10-9839-d3045a7682da";
+export const ABR = "https://abr.business.gov.au/json/";
 
 // watcher saga: watches for actions dispatched to the store, starts worker saga
 export function* watcherSaga() {
@@ -21,12 +21,14 @@ export function* watcherSaga() {
   yield takeLatest(VIEW_ABN_REQUEST, viewAbnSaga);
 }
 
-function* searchByAbnSaga({ payload }) {
+export function* searchByAbnSaga({ payload }) {
+  yield put({ type: PROCESSING_REQUEST, payload: true });
   const URL = `${ABR}AbnDetails.aspx?callback=abnCallback&abn=${payload}&guid=${GUID}`;
-  let resp = yield fetchJsonp(URL, {
+  let resp = yield call(fetchJsonp, URL, {
     jsonpCallbackFunction: "abnCallback"
   });
-  resp = yield resp.json();
+  resp = yield call(resp.json);
+  yield put({ type: PROCESSING_REQUEST, payload: false });
   if (resp.Message) {
     yield put({
       type: SEARCH_ERROR,
@@ -35,21 +37,21 @@ function* searchByAbnSaga({ payload }) {
   } else
     yield put({
       type: SEARCH_BY_ABN_COMPLETED,
-      payload: mapAbnToBusiness(resp)
+      payload: yield call(mapAbnToBusiness, resp)
     });
 }
 
-function* searchByNameSaga({ payload }) {
+export function* searchByNameSaga({ payload }) {
   yield put({ type: PROCESSING_REQUEST, payload: true });
   try {
     const URL = `${ABR}MatchingNames.aspx?callback=nameCallback&name=${payload}&maxResults=20&guid=${GUID}`;
-    let resp = yield fetchJsonp(URL, {
+    let resp = yield call(fetchJsonp, URL, {
       jsonpCallbackFunction: "nameCallback"
     });
-    resp = yield resp.json();
+    resp = yield call(resp.json);
     yield put({ type: PROCESSING_REQUEST, payload: false });
     if (resp.Names && resp.Names.length > 0) {
-      const names = mapNamesToBusiness(resp.Names);
+      const names = yield call(mapNamesToBusiness, resp.Names);
       yield put({ type: SEARCH_BY_NAME_COMPLETED, payload: names });
     } else {
       yield put({
@@ -67,7 +69,7 @@ function* searchByNameSaga({ payload }) {
   }
 }
 
-function mapAbnToBusiness({
+export function mapAbnToBusiness({
   Abn,
   AbnStatus,
   AddressPostcode,
@@ -84,7 +86,7 @@ function mapAbnToBusiness({
   };
 }
 
-function mapNamesToBusiness(names) {
+export function mapNamesToBusiness(names) {
   return names.map(({ Abn, Name, AbnStatus, NameType, Postcode, State }) => ({
     abn: Abn,
     name: Name,
