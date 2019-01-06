@@ -25,7 +25,7 @@ npm start
 * [redux-saga-test-plan](https://www.npmjs.com/package/redux-saga-test-plan) makes testing sagas a breeze
 
 #### Unit testing approach
-* `React components` - unit testing is done by enzyme's shallow/full rendering strategies
+* `React components` - unit testing is done by enzyme's shallow rendering strategies
 * `Redux Saga` - testing is done by `redux-saga-test-plan` to ensure that saga yields specific types of effects in a particular order. API responses are mocked, making your tests ‘pure’, i.e. whether they fail or pass depends only on code, and not on the data that the API returns.
 * `Reducers` - testing is by simple `jest` test cases
 
