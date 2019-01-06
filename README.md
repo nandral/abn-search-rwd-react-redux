@@ -12,3 +12,14 @@ cd abn-search-rwd-react-redux
 npm install
 npm start
 ```
+
+![alt text](https://photos.google.com/share/AF1QipMZ7rm2HgOgrhYlEK2J-DDQ7WAvlLSKflnVKy3m4BqPZVkI733V7EC1AqeJ2pCOZw/photo/AF1QipPbgCMCSAaBBi_ae2wVWCWuyxhjcLkclnKDy_qB?key=ZXdleUdSX2VXSlRCY3N3eXU1aDJCMVZoalJrZ3FR)
+
+
+#### Methodlogies followed / modules used
+
+* `React`  JavaScript library for building user interfaces
+* `CSS3`  for styling the responsive front end.
+* `redux` for managing application state
+* `react-router` for client-side routing
+* `react-saga` for handling redux app side effects
