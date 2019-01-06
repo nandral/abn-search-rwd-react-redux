@@ -21,6 +21,9 @@ npm start
 * `redux` for managing application state
 * `react-saga` for handling redux app side effects
 * [fetch-jsonp](https://www.npmjs.com/package/fetch-jsonp) for calling [ABR JSON APIs](https://abr.business.gov.au/json/) 
+* `enzyme` for unit testing of React components
+* [redux-saga-test-plan](https://www.npmjs.com/package/redux-saga-test-plan) makes testing sagas a breeze
+
 
 **Responsive Web Design principles are applied throught out, so that web page rendering is consistent and the content is legible across Desktop, Tablet, Mobile**
 
